@@ -1,61 +1,19 @@
 # 这些文档说明开发者如何接入天鹏，请仔细阅读。
-- [SSP 对接文档协议](#ssp-%E5%AF%B9%E6%8E%A5%E6%96%87%E6%A1%A3%E5%8D%8F%E8%AE%AE)
-    - [文档说明](#%E6%96%87%E6%A1%A3%E8%AF%B4%E6%98%8E)
-    - [接入准备](#%E6%8E%A5%E5%85%A5%E5%87%86%E5%A4%87)
-    - [实时竞价流程](#%E5%AE%9E%E6%97%B6%E7%AB%9E%E4%BB%B7%E6%B5%81%E7%A8%8B)
-    - [接入说明](#%E6%8E%A5%E5%85%A5%E8%AF%B4%E6%98%8E)
-        - [请求 URL](#%E8%AF%B7%E6%B1%82-url)
-        - [通信方式及编码](#%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F%E5%8F%8A%E7%BC%96%E7%A0%81)
-        - [请求头](#%E8%AF%B7%E6%B1%82%E5%A4%B4)
-        - [竞价请求](#%E7%AB%9E%E4%BB%B7%E8%AF%B7%E6%B1%82)
-            - [Request 字段信息](#request-%E5%AD%97%E6%AE%B5%E4%BF%A1%E6%81%AF)
-                - [app 对象信息](#app-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
-                - [site 对象信息](#site-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
-                    - [Publisher 对象信息](#publisher-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
-                - [Device 对象信息](#device-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
-                    - [Screen 对象信息](#screen-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
-                    - [Geo 对象信息](#geo-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
-                - [User 对象信息](#user-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
-                - [Ad 对象信息](#ad-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
-                    - [Native 对象信息](#native-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
-                - [Zplay 对象信息](#zplay-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
-        - [ADX 返回信息](#adx-%E8%BF%94%E5%9B%9E%E4%BF%A1%E6%81%AF)
-            - [Response 字段信息](#response-%E5%AD%97%E6%AE%B5%E4%BF%A1%E6%81%AF)
-                - [Ad 对象信息](#ad-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF-1)
-                    - [Video 对象信息](#video-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
-                - [Zplay 对象信息](#zplay-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF-1)
-                    - [Native 对象信息](#native-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF-1)
-        - [上报地址宏替换信息](#%E4%B8%8A%E6%8A%A5%E5%9C%B0%E5%9D%80%E5%AE%8F%E6%9B%BF%E6%8D%A2%E4%BF%A1%E6%81%AF)
+ 
 
 ## 文档说明
 
-此文档仅供开发者（SSP） 与 玉米交易平台（ADX） 使用 API 方式对接时使用
+此文档仅供开发者使用 API 方式对接时使用
 
-## 接入准备
-
-在 开发者（SSP）和 玉米交易平台（ADX） 商务人员沟通后，由玉米交易平台（ADX）商务人员提供 开发者（SSP） 账号和相应的 Token 信息。
-
-## 实时竞价流程
-
-实时竞标(RTB) 是指在用户在访问开发者的应用，产生广告曝光机会时，SSP 平台向 ADX 发送带有广告位信息的广告请求，ADX 将广告请求信息进行重新组织，按照与 DSP 约定的规范将请求信息发送给 DSP，DSP 根据自己的广告投放逻辑向 ADX 返回广告及竞价的价格，ADX 根据某种规则完成竞拍，并且将结果返回给 DSP，同时返回获胜的 DSP 的广告信息给 SSP，由 SSP 展示广告。
-
-下面描述了一个曝光从发生到实时竞标，直到最后获胜广告展示的全过程：
-
-**1）** 用户(USER)向 SSP 网站发起访问请求，产生曝光机会时，SSP 将用户请求发送到 ADX
-
-**2）** ADX 向众多家 DSP 并行发起曝光竞标请求，DSP 进行估值后给出此次曝光的报价，ADX 集齐 DSP 报价返回后进行竞拍
-
-**3）** ADX 将竞标成功的 DSP 广告信息返回给 SSP 平台，SSP 将获胜 DSP 的广告返回给用户展示
-
-**4）** 在广告展示的同时向 DSP 发送展示通知及竞价结果
-
-其中 ADX 与 SSP 的实时交互集中在 第一步 和 第三步。
 
 ## 接入说明
 
 ### 请求 URL
 
-当需要请求广告时，发送一个 HTTP POST 请求到下面的地址：bid.adx.yumimobi.com/adx
+当需要请求广告时，发送一个 HTTP POST 请求到下面的地址
+
+测试环境：bid.adx.yumimobi.com/adx
+生产环境：bid.adx.yumimobi.com/adx
 
 ### 通信方式及编码
 
@@ -363,18 +321,4 @@ Request 请求是广告位请求广告的入口，由 SSP 按本文档中规定 
 | type         | int    | 否   | 点击动作类型，1：在 app 内 webview 打开目标链接，2：在系统浏览器打开目标链接，3：打开地图，4：拨打电话，5：播放视频，6：App 下载，7：应用唤醒  |
 | fallback_url       | string   | 否   | 应用唤醒失败后的打开地址，允许使用[宏](supported_macros.md)，例http://www.zplay.cn/ad/{AUCTION_BID_ID}                                                                          |
 | fallback_action    | int      | 否   | fallback_url的动作类型，1：在app内webview打开目标链接，2：在系统浏览器打开目标链接，3：打开地图，4：拨打电话，5：播放视频，6：App下载，7：应用唤醒                                                                          |
-
-### 上报地址宏替换信息
-
-> 客户端在触发上报信息时，必须将点击追踪链接、点击跳转地址中的宏变量替换上报（如有），单位为像素。需要替换的宏坐标如下：
-
-| 宏变量                      | 类型  | 说明            |
-| --------------------------- | ----- | --------------- |
-| YUMI_ADSERVICE_CLICK_DOWN_X | int32 | 点击落下 X 坐标 |
-| YUMI_ADSERVICE_CLICK_DOWN_Y | int32 | 点击落下 Y 坐标 |
-| YUMI_ADSERVICE_CLICK_UP_X   | int32 | 点击离开 X 坐标 |
-| YUMI_ADSERVICE_CLICK_UP_Y   | int32 | 点击离开 Y 坐标 |
-
-> 广告展示内容方向与屏幕方向一致时，广告位左上角为坐标（0，0）点，见下方示例。如果无法获取上述字段，需要将值替换为-999。
-
-![click area](/img/click_area.png)
+ 
