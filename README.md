@@ -179,7 +179,6 @@ HTTPS 协议、POST 方法，数据使用 JSON 格式，编码采用 UTF-8 编�
     "ads": [
         {
             "type": 0,
-            "place_id": "an6o1ngv",
             "floor_price": 0,
             "w": 640,
             "h": 100,
