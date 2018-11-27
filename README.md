@@ -10,8 +10,8 @@
 
 ### 请求 URL
 
-当需要请求广告时，发送一个 HTTP POST 请求到下面的地址
-测试环境   https://ad.tianpengnet.cn/ad/tianpeng/test
+当需要请求广告时，发送一个 HTTP POST 请求到下面的地址  \
+测试环境   https://ad.tianpengnet.cn/ad/tianpeng/test \
 生产环境  https://ad.tianpengnet.cn/ad/tianpeng/prod
  
 
@@ -87,48 +87,50 @@ HTTPS 协议、POST 方法，数据使用 JSON 格式，编码采用 UTF-8 编�
 
 | 字段名称 | 类型        | 必须 | 描述                                                                     |
 | -------- | ----------- | ---- | ------------------------------------------------------------------------ |
-| result   | int         | 是   | 返回结果，0：成功，小于 0 表示失败                                       |
+| code     | int         | 是   | 返回结果，0：成功，小于 0 表示失败                                       |
 | msg      | string      | 否   | 失败的话，会填写失败原因，例："网络错误"                                 |
-| ad       | 对象        | 否   | 如果失败，或者无对应广告则无此数据，此字段为协议版本 1.0（包括）以下有效 |
 | ads      | ad 对象数组 | 否   | 如果失败，或者无对应广告则无此数据                                       |
-| cur      | string      | 否   | 广告价格货币类型，默认为"CNY"                                            |
+
 
 ##### Ad 对象信息
 
 | 字段名称           | 类型     | 必须 | 描述                                                                                                                                           |
 | ------------------ | -------- | ---- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| id                 | string   | 是   | 广告 id                                                                                                                                        |
-| place_id           | string   | 是   | 广告位 id，与 request 中的 place_id 对应                                                                                                       |
-| action             | int      | 是   | 广告动作类型，1：在 app 内 webview 打开目标链接，2：在系统浏览器打开目标链接，3：打开地图，4：拨打电话，5：播放视频，6：App 下载， 7：应用唤醒 |
-| html_snippet       | string   | 否   | html 广告代码                                                                                                                                  |
-| image_url          | string   | 否   | 图片地址                                                                                                                                       |
-| w                  | int      | 是   | 广告宽度                                                                                                                                       |
-| h                  | int      | 是   | 广告高度                                                                                                                                       |
-| app_bundle         | string   | 否   | 对于 Android，是应用的 packageName；对于 iOS，是 Bundle identifier                                                                             |
-| app_ver            | string   | 否   | 应用版本号                                                                                                                                     |
-| target_url         | string   | 否   | 目标地址                                                                                                                                       |
-| click_trackers     | array    | 否   | 当点击广告时被上报的监控 URL 列表，应在后台访问                                                                                                      |
-| imp_trackers       | array    | 否   | 当广告被展示时被上报的监控 URL 列表，应在后台访问                                                                                                    |
-| refresh_interv     | int      | 是   | 广告应该在这个间隔后刷新，若为 0 则不刷 新                                                                                                     |
-| inventory_type     | int      | 是   | 广告资源类型，1：图片，2：图文，3：视频，4：html5，5：文本，6：原生，7：html5 url，即一个指向 html5 素材页面的 url                             |
-| title              | string   | 否   | 广告标题，图文广告时需要                                                                                                                       |
-| desc               | string   | 否   | 广告描述，图文广告时需要                                                                                                                       |
-| ssp_id             | string   | 是   | ssp id，该字段为玉米交易平台（ADX）保留字段，开发者（SSP）可忽略                                                                               |
-| download_file_name | string   | 否   | 下载文件名，动作类型为下载类型时需要                                                                                                           |
-| file_size          | int      | 否   | 当广告为下载广告时，这是下载文件大小                                                                                                           |
-| price              | float    | 否   | 广告价格                                                                                                        |
-| ex_param           | []string | 否   | 扩展参数                                                                                                                                       |
-| ssp_ad_id          | string   | 否   | 自主 api 返回的 sspAdId，该字段为玉米交易平台（ADX）保留字段，开发者（SSP）可忽略                                                              |
-| video              | 对象     | 否   | 视频对象                                                                                                                                       |
-| native             | 对象     | 否   | 原生广告对象                                                                                                                                   |
-| logo_url           | string   | 否   | 角标资源地址                                                                                                                                   |
-| fallback_url       | string   | 否   | 应用唤醒失败后的打开地址，允许使用[宏](supported_macros.md)，例http://www.zplay.cn/ad/{AUCTION_BID_ID}                                                                          |
-| fallback_action    | int      | 否   | fallback_url的动作类型，1：在app内webview打开目标链接，2：在系统浏览器打开目标链接，3：打开地图，4：拨打电话，5：播放视频，6：App下载，7：应用唤醒                                                                          |
+| source                 | string   | 否   | 广告来源   |
+| action_type             | string   | 否   | 交互类型：0-跳转落地页，1-下载   |
+| inventory_type             | string   | 否   | 广告资源类型，1：图片，2：图文，3：视频，4：html5，5：文本，6：原生，7：html5 url，即一个指向 html5 素材页面的 url   |
+| action             | string   | 否   | 广告动作类型，1：在 app 内 webview 打开目标链接，2：在系统浏览器打开目标链接，3：打开地图，4：拨打电话，5：播放视频，6：App 下载， 7：应用唤醒   |
+| adw             | string   | 否   | 广告宽   |
+| adh             | string   | 否   | 广告高   |
+| html             | string   | 否   |  html 广告代码，需要用 webview 展示   |
+| image_url             | string   | 否   | 广告图片地址数组，一般为 1 个，原生信息流广告可能为多个   |
+| landing_url             | string   | 否   | 落地页(广告点击跳转地址) / 下载地址   |
+| req_download_url             | string   | 否   | 特殊下载类广告   |
+| deeplink_url             | string   | 否   | 搜索终端是否安装对应 app，有则跳转至 app对应地址，无则跳转到 landing_url   |
+| video             | string   | 否   | 视频广告封面素材对象，详见下方   |
+| show_report             | string   | 否   | 展示监控数组，广告展示后触发上报   |
+| click_report             | string   | 否  | 点击监控数组，用户点击后触发上报   |
+| deeplink_report             | string   | 否   | deeplink 类广告成功调用后，触发上报   |
+| load_report             | string   | 否   | 加载监控数组，加载广告的同时触发上报   |
+| app_downstart_report             | string   | 否   | 下载开始上报监控   |
+| app_downend_report             | string   | 否   | 下载成功上报监控   |
+| app_installstart_report             | string   | 否   | 安装开始上报监控   |
+| app_installend_report             | string   | 否   | 安装成功上报监控   |
+| app_open_report             | string   | 否   | 安装成功后打开应用上报监控   |
+| package_name             | string   | 否   | 下载包名称   |
+| icon             | string   | 否   | 信息流广告图标   |
+| title             | string   |否   | 广告标题   |
+| desc             | string   | 否   | 广告描述   |
+| download_file_name             | string   | 是   | 下载文件名，动作类型为下载类型时需要   |
+| adlogo             | string   |否   | 广告标识图标   |
+| file_size             | string   | 否   | 当广告为下载广告时，这是下载文件大小   |
 
 ###### Video 对象信息
 
 | 字段名称                   | 类型   | 必须 | 描述                                           |
 | -------------------------- | ------ | ---- | ---------------------------------------------- |
+| start                        | string | 是   | 视频加载之前初始封面                                 |
+| end                        | string | 是   | 视频播放结束封面                                  |
 | url                        | string | 是   | 视频播放 url                                   |
 | play_duration              | int    | 否   | 视频播放时长， 单位为秒                        |
 | player_start_trackers      | array  | 否   | 播放时上报 url                                 |
