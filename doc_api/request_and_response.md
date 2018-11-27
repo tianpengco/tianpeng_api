@@ -54,19 +54,19 @@ HTTPS 协议、POST 方法，数据使用 JSON 格式，编码采用 UTF-8 编�
 | imsi            | string  | 是   | imsi                                                        |
 | mac            | string  | 是   | mac 地址，如 00:02:00:00:00:00                                                        |
 | ua            | string  | 是   | 浏览器 userAgent                                                        |
-| type            | string  | 是   | 设备类型(0 – phone，1 – pad，2 – 其他)                                                        |
-| os            | string  | 是   | 操作系统类型(0 – IOS，1 – ANDROID)                                                        |
+| type            | int  | 是   | 设备类型(0 – phone，1 – pad，2 – 其他)                                                        |
+| os            | int  | 是   | 操作系统类型(0 – IOS，1 – ANDROID)                                                        |
 | osv            | string  | 是   | 操作系统版本，如：10.2.1                                                        |
 | brand            | string  | 是   | 设备品牌，如：HUAWEI                                                        |
 | model            | string  | 是   | 设备型号，如：MATE9                                                        |
-| sw            | string  | 是   | 设备屏幕宽度，像素，如 1080                                                        |
-| sh            | string  | 是   | 设备屏幕高度，像素，如 1920                                                   |
-| lat            | string  | 是   | 纬度                                                        |
-| lon            | string  | 是   | 经度                                                        |
+| sw            | int  | 是   | 设备屏幕宽度，像素，如 1080                                                        |
+| sh            | int  | 是   | 设备屏幕高度，像素，如 1920                                                   |
+| lat            | double  | 是   | 纬度                                                        |
+| lon            | double  | 是   | 经度                                                        |
 | orientation    | string  | 是 |横竖屏，0–竖屏，1–横屏                                                 |
 | mcc            | string  | 是   | 移动国家码，中国：460                                                       |
 | mnc            | string  | 是   | 移动网络码，移动 00/02/07，联通 01/06，电信 03/05/11           |
-| connection     | string  | 是   | 网络类型：0-未知，1-wifi，2-2G，3-3G，4-4G                                      |
+| connection     | int  | 是   | 网络类型：0-未知，1-wifi，2-2G，3-3G，4-4G                                      |
 | density        | string  | 否   | 屏幕像素密度，如，1/2/3/1.5                                                     |
 | lang            | string  | 否   |当前使用的语言，如 zh-cn                                                        |
 
