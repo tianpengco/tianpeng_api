@@ -16,6 +16,34 @@
 HTTPS 协议、POST 方法，数据使用 JSON 格式，编码采用 UTF-8 编码。
 
 
+ [ Request 字段](#request-%E5%AD%97%E6%AE%B5%E4%BF%A1%E6%81%AF)
+    - [app对象](#app-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
+    - [接入准备](#%E6%8E%A5%E5%85%A5%E5%87%86%E5%A4%87)
+    - [实时竞价流程](#%E5%AE%9E%E6%97%B6%E7%AB%9E%E4%BB%B7%E6%B5%81%E7%A8%8B)
+    - [接入说明](#%E6%8E%A5%E5%85%A5%E8%AF%B4%E6%98%8E)
+        - [请求 URL](#%E8%AF%B7%E6%B1%82-url)
+        - [通信方式及编码](#%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F%E5%8F%8A%E7%BC%96%E7%A0%81)
+        - [请求头](#%E8%AF%B7%E6%B1%82%E5%A4%B4)
+        - [竞价请求](#%E7%AB%9E%E4%BB%B7%E8%AF%B7%E6%B1%82)
+            - [Request 字段信息](#request-%E5%AD%97%E6%AE%B5%E4%BF%A1%E6%81%AF)
+                - [app 对象信息](#app-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
+                - [site 对象信息](#site-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
+                    - [Publisher 对象信息](#publisher-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
+                - [Device 对象信息](#device-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
+                    - [Screen 对象信息](#screen-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
+                    - [Geo 对象信息](#geo-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
+                - [User 对象信息](#user-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
+                - [Ad 对象信息](#ad-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
+                    - [Native 对象信息](#native-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
+                - [Zplay 对象信息](#zplay-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
+        - [ADX 返回信息](#adx-%E8%BF%94%E5%9B%9E%E4%BF%A1%E6%81%AF)
+            - [Response 字段信息](#response-%E5%AD%97%E6%AE%B5%E4%BF%A1%E6%81%AF)
+                - [Ad 对象信息](#ad-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF-1)
+                    - [Video 对象信息](#video-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
+                - [Zplay 对象信息](#zplay-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF-1)
+                    - [Native 对象信息](#native-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF-1)
+        - [上报地址宏替换信息](#%E4%B8%8A%E6%8A%A5%E5%9C%B0%E5%9D%80%E5%AE%8F%E6%9B%BF%E6%8D%A2%E4%BF%A1%E6%81%AF)
+
 #### Request 字段信息
 
 | 字段名称   | 类型        | 必须 | 描述                                                                                                                               |
