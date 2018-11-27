@@ -11,9 +11,9 @@
 ### 请求 URL
 
 当需要请求广告时，发送一个 HTTP POST 请求到下面的地址
-
-测试环境： https://ad.tianpengnet.cn/ad/tianpeng/test
-生产环境： https://ad.tianpengnet.cn/ad/tianpeng/prod
+[**测试环境 **]  https://ad.tianpengnet.cn/ad/tianpeng/test
+[**生产环境 **]   https://ad.tianpengnet.cn/ad/tianpeng/prod
+ 
 
 ### 通信方式及编码
 
