@@ -139,10 +139,49 @@ HTTPS 协议、POST 方法，数据使用 JSON 格式，编码采用 UTF-8 编�
 | target_page_click_trackers | array  | 否   | 落地页点击上报 url，当落地页被点击时上报的监控 URL 列表，应在后台访问，点击时的跳转地址为ad.target_url。注意：当填写此数组时，请勿再次填写ad.click_trackers数组。 |
 
 ### 测试例子
-请求参数：
-{"ver":"2.0","appkey":"bg76gil7","pid":"an6o1ngv","need_https":0,"app":{"name":"DrivingTest","bundle":"org.linable.candy.snow2018"},"device":{"type":0,"osv":"6.0","brand":"Xiaomi","model":"Redmi Note 4","mac":"b0:e2:35:fd:76:ba","ua":"Mozilla","sw":1080,"sh":1920,"orientation":"1","density":3,"mcc":"460","mnc":"01","connection":1,"lang":"zh","os":1,"imei":"863100038994079","imsi":"460011062102506","anid":"ac4f7e622e5275a5"},"ads":[{"type":0,"place_id":"an6o1ngv","floor_price":0,"w":640,"h":100,"inventory_types":[1,2,4,5]}]}
+请求参数： \n
+{
+    "ver": "2.0",
+    "appkey": "bg76gil7",
+    "pid": "an6o1ngv",
+    "need_https": 0,
+    "app": {
+        "name": "DrivingTest",
+        "bundle": "org.linable.candy.snow2018"
+    },
+    "device": {
+        "type": 0,
+        "osv": "6.0",
+        "brand": "Xiaomi",
+        "model": "Redmi Note 4",
+        "mac": "b0:e2:35:fd:76:ba",
+        "ua": "Mozilla",
+        "sw": 1080,
+        "sh": 1920,
+        "orientation": "1",
+        "density": 3,
+        "mcc": "460",
+        "mnc": "01",
+        "connection": 1,
+        "lang": "zh",
+        "os": 1,
+        "imei": "863100038994079",
+        "imsi": "460011062102506",
+        "anid": "ac4f7e622e5275a5"
+    },
+    "ads": [
+        {
+            "type": 0,
+            "place_id": "an6o1ngv",
+            "floor_price": 0,
+            "w": 640,
+            "h": 100,
+            "inventory_types": [  1,  2,  4,  5  ]
+        }
+    ]
+}
 
-返回数据
+返回数据 \n
 {
     "ads": [
         {
@@ -164,8 +203,7 @@ HTTPS 协议、POST 方法，数据使用 JSON 格式，编码采用 UTF-8 编�
             ]
         }
     ],
-    "code": 0 
-    
+    "code": 0    
 }
 
      
