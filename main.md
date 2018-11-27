@@ -2,7 +2,7 @@
 
 ### 对接前需知
 
-[建议的广告尺寸](doc_in_chinese/suggested_ad_size.md)
+[建议的广告尺寸](doc_api/request_and_response.md)
 
 
 ### 对接文档
