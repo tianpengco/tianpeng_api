@@ -35,7 +35,6 @@
     "ads": [
         {
             "type": 0,
-            "floor_price": 0,
             "w": 640,
             "h": 100,
             "inventory_types": [  1,  2,  4,  5  ]
