@@ -3,8 +3,7 @@
 
 ### 请求 URL
 
-测试环境   https://ad.tianpengnet.cn/ad/tianpeng/test \
-生产环境  https://ad.tianpengnet.cn/ad/tianpeng/prod 
+接口URL:  https://ad.tianpengnet.cn/ad/tianpeng/api 
 
 ### 通信方式及编码
 
