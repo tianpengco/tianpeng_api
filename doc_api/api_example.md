@@ -1,11 +1,10 @@
-{
+        
+  {
     "ver": "2.0",
     "appkey": "bg76gil7",
     "pid": "dGVzdF9hbjZvMW5ndg==",
     "need_https": 0,
-    "app": {
-        
-        "name": "DrivingTest",
+    "app": { "name": "DrivingTest",
         "bundle": "org.linable.candy.snow2018"
     },
     "device": {
