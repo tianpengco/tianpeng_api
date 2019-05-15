@@ -52,7 +52,7 @@ HTTPS 协议、POST 方法，数据使用 JSON 格式，编码采用 UTF-8 编�
 | idfv            | string  | 是   | IOS idfv                                        |
 | anid           | string  | 是   | Android ID                                             |
 | imei            | string  | 是   | imei  (Android:如果是cdma手机请传meid 码)                                                      |
-| imsi            | string  | 是   | imsi  (Android)                                                      |
+| imsi            | string  | 是   | imsi                                                      |
 | mac            | string  | 是   | mac 地址，如 00:02:00:00:00:00                                                        |
 | ua            | string  | 是   | 浏览器 userAgent                                                        |
 | type            | int  | 是   | 设备类型(0 – phone，1 – pad，2 – 其他)                                                        |
