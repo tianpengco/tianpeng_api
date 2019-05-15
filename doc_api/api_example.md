@@ -1,14 +1,10 @@
-
-### 测试例子
-
-## banner 请求参数:
-``` json
 {
     "ver": "2.0",
     "appkey": "bg76gil7",
-    "pid": "an6o1ngv",
+    "pid": "dGVzdF9hbjZvMW5ndg==",
     "need_https": 0,
     "app": {
+        
         "name": "DrivingTest",
         "bundle": "org.linable.candy.snow2018"
     },
@@ -35,9 +31,15 @@
     "ads": [
         {
             "type": 0,
+            "floor_price": 0,
             "w": 640,
             "h": 100,
-            "inventory_types": [  1,  2,  4,  5  ]
+            "inventory_types": [
+                1,
+                2,
+                4,
+                5
+            ]
         }
     ]
 }
