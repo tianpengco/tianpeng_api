@@ -1,9 +1,12 @@
+## 请求URL:
+
+https://ad.tianpengnet.cn/ad/tianpeng/api
+
 ## 请求参数:
 ``` json
   {
     "ver": "2.0",
-    "appkey": "bg76gil7",
-    "pid": "dGVzdF9hbjZvMW5ndg==",
+    "pid": "abc",
     "need_https": 0,
     "app": { "name": "DrivingTest",
         "bundle": "org.linable.candy.snow2018"
