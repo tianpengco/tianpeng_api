@@ -6,7 +6,7 @@ https://ad.tianpengnet.cn/ad/tianpeng/api
 ``` json
   {
     "ver": "2.0",
-    "pid": "abc",
+    "pid": "test",
     "need_https": 0,
     "app": { "name": "DrivingTest",
         "bundle": "org.linable.candy.snow2018"
