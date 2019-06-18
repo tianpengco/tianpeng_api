@@ -9,7 +9,7 @@ https://ad.tianpengnet.cn/ad/tianpeng/api
     "pid": "test",
     "need_https": 0,
     "app": { "name": "DrivingTest",
-        "bundle": "org.linable.candy.snow2018"
+        "bundle": "com.test"
     },
     "device": {
         "type": 0,
