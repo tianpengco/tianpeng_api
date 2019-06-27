@@ -27,7 +27,7 @@ HTTPS 协议、POST 方法，数据使用 JSON 格式，编码采用 UTF-8 编�
 -  [API Request 字段](#request-%E5%AD%97%E6%AE%B5%E4%BF%A1%E6%81%AF)
     - [app 对象](#app-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
     - [device 对象](#device-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
-    - [adslot 对象](#ad-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF)
+    - [adslot 对象](#adslot+%e5%af%b9%e8%b1%a1%e4%bf%a1%e6%81%af)
    
 - [API Response信息](#response-%E5%AD%97%E6%AE%B5%E4%BF%A1%E6%81%AF)
    - [ad 对象信息](#ad-%E5%AF%B9%E8%B1%A1%E4%BF%A1%E6%81%AF-1)
