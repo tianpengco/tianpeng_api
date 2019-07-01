@@ -6,9 +6,10 @@ https://ad.tianpengnet.cn/ad/tianpeng/api
 ``` json
   {
     "ver": "2.0",
-    "pid": "test",
+    "pid": "abc",
     "need_https": 0,
-    "app": { "name": "DrivingTest",
+    "app": {
+        "name": "DrivingTest",
         "bundle": "com.test"
     },
     "device": {
@@ -31,20 +32,10 @@ https://ad.tianpengnet.cn/ad/tianpeng/api
         "imsi": "460011062102506",
         "anid": "ac4f7e622e5275a5"
     },
-    "ads": [
-        {
-            "type": 0,
-            "floor_price": 0,
-            "w": 640,
-            "h": 100,
-            "inventory_types": [
-                1,
-                2,
-                4,
-                5
-            ]
-        }
-    ]
+    "adslot ": {
+        "w": 640,
+        "h": 100
+    }
 }
 ```
 ## 返回数据:
@@ -52,24 +43,26 @@ https://ad.tianpengnet.cn/ad/tianpeng/api
 {
     "ads": [
         {
-            "action": 2,
-            "adh": 100,
-            "adlogo": "http://stxxxo/zhxxyun.png",
+            "action": 7,
+            "adh": 960,
             "adw": 640,
             "click_report": [
-                "http://xxx"
+                "http://texxx",
+                "xxx"
             ],
-            "image_url": [
-                "http://xxx2745.jpg"
+            "deeplink_url": "suning://m.suning.com/index?adTypeCodexxx",
+            "images_url": [
+                "http://sc.ghssad.com/sources/s/2019052511/22/5ce8bba71a427.jpg"
             ],
-            "inventory_type": 1,
-            "landing_url": "http://tssss_=",
+            "landings_url": [
+                "https://cuxiaxxx"
+            ],
             "show_report": [
-                "http:sssEdQEB&cb=1",
-                "http://sss"
+                "http://texxx",
+                "httpssss"
             ]
         }
     ],
-    "code": 0    
+    "code": 0
 }
 ```
